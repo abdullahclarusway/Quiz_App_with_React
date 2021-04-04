@@ -1,10 +1,20 @@
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Questions from "./pages/Questions";
+import Intro from "./pages/Intro";
+import Finish from "./pages/Finish";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Let's build a Quiz App</h1>
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Intro} />
+          <Route exact path="/questions" component={Questions} />
+          <Route exact path="/finish" component={Finish} />
+        </Switch>
+      </Router>
+    </>
   );
 }
 
